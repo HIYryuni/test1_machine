@@ -59,15 +59,15 @@
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
             if(prediction[0].probability.toFixed(2)>0.8){
-                labelContainer.childNodes[0].innerHTML="1個目"
+                labelContainer.childNodes[0].innerHTML="XT90M"
             }else if(prediction[1].probability.toFixed(2)>0.8){
-                labelContainer.childNodes[0].innerHTML="2個目"
+                labelContainer.childNodes[0].innerHTML="XT90F"
             }else if(prediction[2].probability.toFixed(2)>0.8){
-                labelContainer.childNodes[0].innerHTML="3個目"
+                labelContainer.childNodes[0].innerHTML="XT60M"
             }else if(prediction[3].probability.toFixed(2)>0.8){
-                labelContainer.childNodes[0].innerHTML="4個目"
+                labelContainer.childNodes[0].innerHTML="XT60F"
             }else if(prediction[4].probability.toFixed(2)>0.8){
-                labelContainer.childNodes[0].innerHTML="5個目"
+                labelContainer.childNodes[0].innerHTML="無"
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
             }
