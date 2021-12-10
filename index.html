@@ -57,27 +57,59 @@
         // run the webcam image through the image model
         async function predict() {
             // predict can take in an image, video or canvas html element
+            var sum = new array(5);
+            var ave = new array(5);
             const prediction = await model.predict(webcam.canvas);
-            if(prediction[0].probability.toFixed(2)>0.8){
+            
+            for(let i=0; i<10; i++){
+                for(let j=0; j<maxPredictions; j++){
+                    prediction[i].probability.toFixed(2)+=sum[j];
+                }
+            }
+            for(let i=j; j<maxPredictions; j++){
+                sum[i]/10==ave[i];
+            }
+
+            if(ave[0]>0.9){
+                labelContainer.childNodes[0].innerHTML="1個目"
+                window.location.href="./XT90F.html";
+            }else if(ave[1]>0.9){
+                labelContainer.childNodes[0].innerHTML="2個目"
+                window.location.href="./XT90M.html";
+            }else if(ave[2]>0.9){
+                labelContainer.childNodes[0].innerHTML="3個目"
+                window.location.href="./XT60F.html";
+            }else if(ave[3]>0.9){
+                labelContainer.childNodes[0].innerHTML="4個目"
+                window.location.href="./XT60M.html";
+            }else if(ave[4]>0.9){
+                labelContainer.childNodes[0].innerHTML="何もなし"
+            }else {
+                labelContainer.childNodes[0].innerHTML="認識できていません。"
+                
+            }
+
+            /*
+            if(prediction[0].probability.toFixed(2)>0.9){
                 labelContainer.childNodes[0].innerHTML="1個目"
                 window.location.href="./XT90F.html";
             }else if(prediction[1].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="2個目"
                 window.location.href="./XT90M.html";
-            }else if(prediction[2].probability.toFixed(2)>0.8){
+            }else if(prediction[2].probability.toFixed(2)>0.6){
                 labelContainer.childNodes[0].innerHTML="3個目"
                 window.location.href="./XT60F.html";
-            }else if(prediction[3].probability.toFixed(2)>0.8){
+            }else if(prediction[3].probability.toFixed(2)>0.6){
                 labelContainer.childNodes[0].innerHTML="4個目"
                 window.location.href="./XT60M.html";
-            }else if(prediction[4].probability.toFixed(2)>0.8){
+            }else if(prediction[4].probability.toFixed(2)>0.6){
                 labelContainer.childNodes[0].innerHTML="何もなし"
             }else {
                 labelContainer.childNodes[0].innerHTML="認識できていません。"
                 
             }
                 
-
+            */
 
             /*
             for (let i = 0; i < maxPredictions; i++) {
