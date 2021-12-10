@@ -58,7 +58,6 @@
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
-            const prediction = await model.predict(webcam.canvas);
             if(prediction[0].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="1個目"
             }else if(prediction[1].probability.toFixed(2)>0.8){
