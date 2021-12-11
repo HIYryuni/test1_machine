@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model8,6</div>
+    <div>Teachable Machine Image Model8,7</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -20,6 +20,7 @@
         const URL = "./my_model/";
 
         let model, webcam, labelContainer, maxPredictions;
+        var array1 = new Array(5);
 
         // Load the image model and setup the webcam
         async function init() {
@@ -48,7 +49,7 @@
             }
         }
 
-        var array1 = new Array(5);
+        
 
         async function loop() {
             webcam.update(); // update the webcam frame
@@ -65,7 +66,7 @@
                 array1[i]=array1[i]+prediction[i].probability.toFixed(2);
             }
 
-           
+           /*
             if(array1[0]>8){
                 labelContainer.childNodes[0].innerHTML="XT90M_"
                 for(let i = 0; i < maxPredictions; i++){
@@ -93,8 +94,10 @@
                 }
             }
 
+            */
+
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =array1[i];
+                const classPrediction =array1[i]+":";
                 labelContainer.childNodes[i].innerHTML = classPrediction+":";
             }       
             
