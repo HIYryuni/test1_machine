@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model8,5</div>
+    <div>Teachable Machine Image Model8,6</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -62,7 +62,7 @@
             const prediction = await model.predict(webcam.canvas);
 
             for(let i = 0; i < maxPredictions; i++){
-                array1[i]+=prediction[i].probability.toFixed(2);
+                array1[i]=array1[i]+prediction[i].probability.toFixed(2);
             }
 
            
