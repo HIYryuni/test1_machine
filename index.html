@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model8,1</div>
+    <div>Teachable Machine Image Model8,2</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -92,7 +92,11 @@
                     array1[i]=0;
                 }
             }
-        
+
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =array1[i];
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }       
             
 
 
