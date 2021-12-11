@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model4</div>
+    <div>Teachable Machine Image Model6</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -60,12 +60,10 @@
             const prediction = await model.predict(webcam.canvas);
             if(prediction[0].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90M"
-                //var str = new String("XT90M");
-                document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
+                //document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }else if(prediction[1].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90F"
-                //var str = new String("XT90F");
-                document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
+                //document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }else if(prediction[2].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT60M"
                 
@@ -77,19 +75,18 @@
                 
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
-                //var str = new String("Nothing");
                 document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }
 
 
 
-            /*
+            
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
-            */
+            
         }
     </script>
 
