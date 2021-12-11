@@ -39,8 +39,7 @@
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
-            document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
-
+            
             // append elements to the DOM
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             labelContainer = document.getElementById("label-container");
@@ -59,12 +58,13 @@
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
+            const i = 0;
             if(prediction[0].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90M_"
-                //document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
+                
             }else if(prediction[1].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90F"
-                //document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
+               
             }else if(prediction[2].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT60M"
                 
@@ -76,10 +76,11 @@
                 
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
-                //document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
+                
             }
 
-
+            i++;
+            document.write(i);
 
             /*
             for (let i = 0; i < maxPredictions; i++) {
