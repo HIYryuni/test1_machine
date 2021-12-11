@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model7.3</div>
+    <div>Teachable Machine Image Model7.4</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -48,6 +48,8 @@
             }
         }
 
+        var array1 = new Array(5);
+
         async function loop() {
             webcam.update(); // update the webcam frame
             await predict();
@@ -58,29 +60,34 @@
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
-            const i = 0;
-            if(prediction[0].probability.toFixed(2)>0.8){
+
+            for(let i = 0; i < maxPredictions; i++){
+                array1[i]+=prediction[i].probability.toFixed(2);
+            }
+
+           
+            if(array1[0]>800){
                 labelContainer.childNodes[0].innerHTML="XT90M_"
                 
-            }else if(prediction[1].probability.toFixed(2)>0.8){
+            }else if(array1[1]>800){
                 labelContainer.childNodes[0].innerHTML="XT90F"
                
-            }else if(prediction[2].probability.toFixed(2)>0.8){
+            }else if(array1[2]>800){
                 labelContainer.childNodes[0].innerHTML="XT60M"
                 
-            }else if(prediction[3].probability.toFixed(2)>0.8){
+            }else if(array1[3]>800){
                 labelContainer.childNodes[0].innerHTML="XT60F"
                 
-            }else if(prediction[4].probability.toFixed(2)>0.8){
+            }else if(array1[4]>800){
                 labelContainer.childNodes[0].innerHTML="無"
                 
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
                 
             }
+            
 
-            i++;
-            document.write(i);
+
 
             /*
             for (let i = 0; i < maxPredictions; i++) {
