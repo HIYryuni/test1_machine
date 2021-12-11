@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model9s</div>
+    <div>Teachable Machine Image Model9.1s</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -20,7 +20,7 @@
         const URL = "./my_model/";
 
         let model, webcam, labelContainer, maxPredictions;
-        let array1 = new Array(5);
+        let array1 = [0,0,0,0,0];
 
         // Load the image model and setup the webcam
         async function init() {
@@ -99,8 +99,7 @@
 
             
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =array1[i]+":";
-                labelContainer.childNodes[i].innerHTML = array1[i]+":";
+                labelContainer.childNodes[i].innerHTML = array1[i];
             }    
             
             
