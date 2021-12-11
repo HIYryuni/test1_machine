@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model8,8</div>
+    <div>Teachable Machine Image Model8,9</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -20,7 +20,7 @@
         const URL = "./my_model/";
 
         let model, webcam, labelContainer, maxPredictions;
-        let array1 = new Array(5);
+        let array1 = 0;
 
         // Load the image model and setup the webcam
         async function init() {
@@ -61,10 +61,12 @@
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
-
+            array1+=prediction[0].probability.toFixed(2);
+            /*
             for(let i = 0; i < maxPredictions; i++){
                 array1[i]=array1[i]+prediction[i].probability.toFixed(2);
             }
+            */
 
            /*
             if(array1[0]>8){
@@ -96,12 +98,14 @@
 
             */
 
+            /*
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =array1[i]+":";
-                labelContainer.childNodes[i].innerHTML = classPrediction+":";
-            }       
+                //const classPrediction =array1[i]+":";
+                labelContainer.childNodes[i].innerHTML = array1[i]+":";
+            }    
+            */   
             
-
+            labelContainer.childNodes[0].innerHTML = array1+":";
 
 
             /*
