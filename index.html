@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model7.1</div>
+    <div>Teachable Machine Image Model7.2</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -39,6 +39,7 @@
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
+            document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
 
             // append elements to the DOM
             document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -52,7 +53,6 @@
             webcam.update(); // update the webcam frame
             await predict();
             window.requestAnimationFrame(loop);
-            document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
         }
 
         // run the webcam image through the image model
