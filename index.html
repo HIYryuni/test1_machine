@@ -68,22 +68,34 @@
            
             if(array1[0]>800){
                 labelContainer.childNodes[0].innerHTML="XT90M_"
-                
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }else if(array1[1]>800){
                 labelContainer.childNodes[0].innerHTML="XT90F"
-               
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }else if(array1[2]>800){
                 labelContainer.childNodes[0].innerHTML="XT60M"
-                
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }else if(array1[3]>800){
                 labelContainer.childNodes[0].innerHTML="XT60F"
-                
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }else if(array1[4]>800){
                 labelContainer.childNodes[0].innerHTML="無"
-                
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
-                
+                for(let i = 0; i < maxPredictions; i++){
+                    array1[i]=0;
+                }
             }
             
 
