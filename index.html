@@ -60,12 +60,12 @@
             const prediction = await model.predict(webcam.canvas);
             if(prediction[0].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90M"
-                var str = new String("XT90M");
-                //document.write(str.link("http://www.htmq.com/js/"));
+                //var str = new String("XT90M");
+                document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }else if(prediction[1].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT90F"
-                var str = new String("XT90F");
-                //document.write(str.link("http://www.htmq.com/js/"));
+                //var str = new String("XT90F");
+                document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }else if(prediction[2].probability.toFixed(2)>0.8){
                 labelContainer.childNodes[0].innerHTML="XT60M"
                 
@@ -77,7 +77,8 @@
                 
             }else {
                 labelContainer.childNodes[0].innerHTML="???"
-                var str = new String("Nothing");
+                //var str = new String("Nothing");
+                document.write(labelContainer.childNodes[0].innerHTML.link("http://www.htmq.com/js/"));
             }
 
 
