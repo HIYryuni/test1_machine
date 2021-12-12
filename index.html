@@ -65,47 +65,75 @@
             for(let i = 0; i < maxPredictions; i++){
                 array1[i]=array1[i]+Number(prediction[i].probability.toFixed(2));
             }
-            
+
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.childNodes[i].innerHTML = array1[i];
+            }           
 
            
             if(array1[0]>8){
-                labelContainer.childNodes[0].innerHTML="XT90M_"
+
+                const str = "XT90M";
+                document.write( str.link("https://akizukidenshi.com/catalog/top.aspx") )
+
+                //labelContainer.childNodes[0].innerHTML="XT90M_"
+                /*
                 for(let i = 0; i < maxPredictions; i++){
                     array1[i]=0;
                 }
+                */
+                
             }else if(array1[1]>8){
-                labelContainer.childNodes[0].innerHTML="XT90F"
+
+                const str = "XT90F";
+                document.write( str.link("https://akizukidenshi.com/catalog/top.aspx") )
+
+                //labelContainer.childNodes[0].innerHTML="XT90M_"
+                /*
                 for(let i = 0; i < maxPredictions; i++){
                     array1[i]=0;
                 }
+                */
+                
             }else if(array1[2]>8){
-                labelContainer.childNodes[0].innerHTML="XT60M"
+
+                const str = "XT60M";
+                document.write( str.link("https://akizukidenshi.com/catalog/top.aspx") )
+
+                //labelContainer.childNodes[0].innerHTML="XT90M_"
+                /*
                 for(let i = 0; i < maxPredictions; i++){
                     array1[i]=0;
                 }
+                */
+                
             }else if(array1[3]>8){
-                labelContainer.childNodes[0].innerHTML="XT60F"
+
+                const str = "XT60F";
+                document.write( str.link("https://akizukidenshi.com/catalog/top.aspx") )
+
+                //labelContainer.childNodes[0].innerHTML="XT90M_"
+                /*
                 for(let i = 0; i < maxPredictions; i++){
                     array1[i]=0;
                 }
+                */
+                
             }else if(array1[4]>8){
-                labelContainer.childNodes[0].innerHTML="無"
+
+                const str = "???";
+                //document.write( str.link("https://akizukidenshi.com/catalog/top.aspx") )
+
+                //labelContainer.childNodes[0].innerHTML="XT90M_"
+                /*
                 for(let i = 0; i < maxPredictions; i++){
                     array1[i]=0;
                 }
-            }
+                */
+                
+             }
 
-            
-
-            
-            for (let i = 0; i < maxPredictions; i++) {
-                labelContainer.childNodes[i].innerHTML = array1[i];
-            }    
-            
-            
-           
-
-
+          
             /*
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
