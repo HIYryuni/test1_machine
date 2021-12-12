@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model11.1</div>
+    <div>Teachable Machine Image Model11.2</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -68,17 +68,17 @@
                 array1[i]=array1[i]+Number(prediction[i].probability.toFixed(2));
             }
 
-            
+            /*
             for (let i = 0; i < maxPredictions; i++) {
                 labelContainer.childNodes[i].innerHTML = array1[i];
             }   
-                    
+            */   
 
            
             if(array1[0]>8){
 
                 const str = "XT90M";
-                labelContainer.childNodes[5].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
+                labelContainer.childNodes[0].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
 
                 //labelContainer.childNodes[0].innerHTML="XT90M_"
                 
@@ -90,7 +90,7 @@
             }else if(array1[1]>8){
 
                 const str = "XT90F";
-                labelContainer.childNodes[5].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx") 
+                labelContainer.childNodes[0].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx") 
 
                 //labelContainer.childNodes[0].innerHTML="XT90M_"
                 
@@ -102,7 +102,7 @@
             }else if(array1[2]>8){
 
                 const str = "XT60M";
-                labelContainer.childNodes[5].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
+                labelContainer.childNodes[0].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
 
                 //labelContainer.childNodes[0].innerHTML="XT90M_"
                 
@@ -114,7 +114,7 @@
             }else if(array1[3]>8){
 
                 const str = "XT60F";
-                labelContainer.childNodes[5].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
+                labelContainer.childNodes[0].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
 
                 //labelContainer.childNodes[0].innerHTML="XT90M_"
                 
@@ -126,7 +126,7 @@
             }else if(array1[4]>8){
 
                 const str = "???";
-                labelContainer.childNodes[5].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
+                labelContainer.childNodes[0].innerHTML=str.link("https://akizukidenshi.com/catalog/top.aspx")
 
                 //labelContainer.childNodes[0].innerHTML="XT90M_"
                 
